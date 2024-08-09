@@ -14,12 +14,17 @@ framess = []
 
 def audio_callback(indata, frames, time, status):
     """Callback para captura de áudio."""
+    m=0
     global recording, framess
     if recording:
+        m=0
         for n in indata.copy():
-            nn=int(2000000.00*n[0])
-            if nn>16000:
-                print("->"+str(nn))
+            nn=abs((n[0]))
+            if nn>m:
+                m=nn
+       
+        if m>0.00009:
+            print("->"+str(m))
 
 def start_recording():
     global recording, framess
