@@ -23,7 +23,7 @@ def audio_callback(indata, frames, time, status):
             if nn>m:
                 m=nn
        
-        if m>0.00009:
+        if m>0.000052 and m<0.00006103569:
             print("->"+str(m))
 
 def start_recording():
