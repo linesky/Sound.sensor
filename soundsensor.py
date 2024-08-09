@@ -20,7 +20,7 @@ def audio_callback(indata, frames, time, status):
         m=0
         for n in indata.copy():
             nn=abs((n[0]))
-            if nn>m:
+            if nn>0.000030516 and nn<0.000061035159:
                 m=nn
        
         if m>0.000030516 and m<0.000061035159:
